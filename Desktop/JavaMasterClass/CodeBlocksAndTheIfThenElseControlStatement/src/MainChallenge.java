@@ -1,18 +1,10 @@
 public class MainChallenge {
     public static void main(String[] args) {
 
-        calculateScore(true, 2000, 6, 2342);
+        int highScore = calculateScore(true, 2000, 6, 2342);
+        System.out.println("The high score is " + highScore);
 
-        int score = 10000;
-        int finalScore = score;
-        boolean gameOver = true;
-        int levelCompleted = 8;
-        int bonus = 200;
-
-        if (gameOver) {
-            finalScore += (levelCompleted * bonus);
-            System.out.println("Your final score was " + finalScore);
-        }
+        System.out.println("The next high score is " +  calculateScore(true, 1000, 82, 20));
 
 //        boolean newGameOver = true;
 //        int newFinalScore = 1000;
@@ -25,11 +17,12 @@ public class MainChallenge {
 //        }
 
     }
-    public static void calculateScore(boolean gameOver, int score, int levelCompleted, int bonus){
+    public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus){
         int finalScore = score;
         if (gameOver) {
             finalScore += (levelCompleted * bonus);
-            System.out.println("Your final score was " + finalScore);
         }
+
+        return finalScore;
     }
 }
