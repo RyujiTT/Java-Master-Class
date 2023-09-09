@@ -1,16 +1,16 @@
 public class MethodChallenge {
     public static void main(String[] args) {
-        int playerPosition1 = calculateHighScorePosition(1500);
-        displayHighScorePosition("Tim", playerPosition1);
+        int playerPosition = calculateHighScorePosition(1500);
+        displayHighScorePosition("Tim", playerPosition);
 
-        int playerPosition2 = calculateHighScorePosition(700);
-        displayHighScorePosition("Bob", playerPosition2);
+        playerPosition = calculateHighScorePosition(700);
+        displayHighScorePosition("Bob", playerPosition);
 
-        int playerPosition3 = calculateHighScorePosition(400);
-        displayHighScorePosition("Lucy", playerPosition3);
+        playerPosition = calculateHighScorePosition(400);
+        displayHighScorePosition("Lucy", playerPosition);
 
-        int playerPosition4 = calculateHighScorePosition(13);
-        displayHighScorePosition("Mike", playerPosition4);
+        playerPosition = calculateHighScorePosition(13);
+        displayHighScorePosition("Mike", playerPosition);
     }
     public static void displayHighScorePosition (String playerName, int playerPosition) {
         System.out.println(playerName + " managed to get into postion " + playerPosition + " on the high score list");
