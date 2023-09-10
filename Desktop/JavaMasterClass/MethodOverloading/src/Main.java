@@ -2,16 +2,22 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("New score is " + calculateScore("Ryuji", 300));
+        System.out.println("New score is " + calculateScore(400));
+        System.out.println("New score is " + calculateScore());
+    }
 
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+    public static int calculateScore(String playerName, int score){
+        System.out.println("Player " + playerName + " scored " + score + " points");
+        return score * 1000;
+    }
 
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println("i = " + i);
-        }
+    public static int calculateScore(int score){
+        return calculateScore("Anonymous", score);
+    }
+
+    public static int calculateScore(){
+        System.out.println("No player name, no player score.");
+        return 0;
     }
 }
