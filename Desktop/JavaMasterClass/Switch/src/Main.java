@@ -28,5 +28,17 @@ public class Main {
                 System.out.println("Was not 1 or 2");
                 break;
         }
+
+        String month = "OCTR";
+        System.out.println(month + " is in the " + getQuarter(month) + " quater");
+    }
+    public static String getQuarter(String month){
+        return switch (month) {
+            case "JANUARY", "FEBRUARY", "MARCH" -> "1st";
+            case "APRIL", "MAY", "JUNE" -> "2nd";
+            case "JULY", "AUGUST", "SEPTEMBER" -> "3rd";
+            case "OCTOBER", "NOVEMber", "DECEMBER" -> "4th";
+            default -> "bad";
+        };
     }
 }
