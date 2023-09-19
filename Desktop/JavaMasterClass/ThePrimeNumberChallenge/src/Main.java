@@ -2,16 +2,28 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        int count = 0;
 
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println("i = " + i);
+        for (int i = 10; count < 3 && i <= 50; i++){
+            if (isPrime(i)){
+                System.out.println("number " + i + " is a prime number");
+                count++;
+            }
         }
+
+    }
+
+    public static boolean isPrime(int wholeNumber){
+
+        if (wholeNumber <= 2) {
+            return (wholeNumber == 2);
+        }
+
+        for (int divisor = 2; divisor <= wholeNumber / 2; divisor ++){
+            if (wholeNumber %  divisor == 0){
+                return false;
+            }
+        }
+        return true;
     }
 }
