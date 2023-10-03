@@ -1,17 +1,48 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
+public class Main extends Object {
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Student max = new Student("Max", 21);
+        System.out.println(max);
 
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        PrimarySchoolStudent jimmy = new PrimarySchoolStudent("Jimmy", 8, "Carole");
+        System.out.println(jimmy);
+    }
+}
 
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println("i = " + i);
-        }
+class Student{
+    private String name;
+    private int age;
+
+
+    Student(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+
+//    @Override
+//    public String toString() {
+//        return super.toString();
+//    }
+
+
+    @Override
+    public String toString() {
+        return name + " is " + age;
+//        return "Student{" +
+//                "name='" + name + '\'' +
+//                ", age=" + age +
+//                '}';
+    }
+}
+
+class PrimarySchoolStudent extends Student {
+    private String parentName;
+    PrimarySchoolStudent(String name, int age, String parentNmae){
+        super(name, age);
+        this.parentName = parentNmae;
+    }
+
+    @Override
+    public String toString() {
+        return parentName + "'s kid, " + super.toString();
     }
 }
